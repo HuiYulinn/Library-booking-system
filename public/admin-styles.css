@@ -1,0 +1,148 @@
+.admin-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 12px 30px;
+    border: none;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 14px;
+    border-top: 2px solid transparent;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.tab-btn:first-child {
+    border-left: none;
+}
+
+.tab-btn.active {
+    background: white;
+    border-top: 2px solid #4a90e2;
+    border-bottom: 2px solid white;
+    margin-bottom: -2px;
+}
+
+.tab-btn:hover {
+    background: #e8e8e8;
+}
+
+.tab-btn.active:hover {
+    background: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #4a90e2;
+}
+
+.tab-header h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.data-table th {
+    background: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+.data-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.data-table .loading {
+    text-align: center;
+    color: #999;
+    padding: 30px;
+}
+
+.action-btns {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.status-available {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+.status-occupied {
+    background: #fcf8e3;
+    color: #8a6d3b;
+}
+
+.status-maintenance {
+    background: #f2dede;
+    color: #a94442;
+}
+
+.yes-badge {
+    color: #5cb85c;
+}
+
+.no-badge {
+    color: #999;
+}
+
+#userForm .form-group label,
+#seatForm .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#userForm .form-group input[type="checkbox"],
+#seatForm .form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+

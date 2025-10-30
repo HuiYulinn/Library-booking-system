@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书馆选座系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>图书馆选座预约系统</h1>
+            <div class="user-info">
+                <a href="admin-login.html" class="btn btn-secondary" style="margin-right: 15px;">系统管理</a>
+                <span id="currentUser" class="current-user"></span>
+            </div>
+        </header>
+
+<!-- 放在 </header> 后面、<div class="content"> 之前 -->
+<section id="authSection" style="margin:16px 0;">
+  <!-- 未登录时显示：登录表单 -->
+  <form id="login-form" style="display:block; max-width:420px;">
+    <h2 style="margin:8px 0;">用户登录</h2>
+    <div class="form-group">
+      <label for="username">用户名</label>
+      <input type="text" id="username" placeholder="请输入用户名" required />
+    </div>
+    <div class="form-group">
+      <label for="password">密码</label>
+      <input type="password" id="password" placeholder="请输入密码" required />
+    </div>
+    <button type="submit" class="btn btn-primary">登录</button>
+    <button type="button" id="show-register" class="btn btn-secondary" style="margin-left:8px;">去注册</button>
+  </form>
+
+  <!-- 未登录时显示：注册表单（默认隐藏，点击“去注册”显示） -->
+  <form id="register-form" style="display:none; max-width:420px;">
+    <h2 style="margin:8px 0;">用户注册</h2>
+    <div class="form-group">
+      <label for="new-username">用户名</label>
+      <input type="text" id="new-username" placeholder="请输入用户名" required />
+    </div>
+    <div class="form-group">
+      <label for="new-password">密码</label>
+      <input type="password" id="new-password" placeholder="请输入密码" required />
+    </div>
+    <button type="submit" class="btn btn-success">注册</button>
+    <button type="button" id="cancel-register" class="btn btn-secondary" style="margin-left:8px;">取消</button>
+  </form>
+
+  <!-- 已登录时显示：退出按钮 -->
+  <div id="auth-logged" style="display:none; margin-top:8px;">
+    <button id="logoutBtn" class="btn btn-danger">退出登录</button>
+  </div>
+</section>
+
+        <div class="content">
+            <!-- 左侧：座位查询区 -->
+            <div class="left-panel">
+                <section class="search-section">
+                    <h2>查询可用座位</h2>
+                    <div class="form-group">
+                        <label>预约日期：</label>
+                        <input type="date" id="searchDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>开始时间：</label>
+                        <input type="time" id="searchStartTime" value="09:00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>结束时间：</label>
+                        <input type="time" id="searchEndTime" value="12:00" required>
+                    </div>
+                    <button class="btn btn-primary" onclick="searchAvailableSeats()">查询可用座位</button>
+                </section>
+
+                <section class="seats-section">
+                    <h2>可用座位列表 <span id="seatCount"></span></h2>
+                    <div id="seatsList" class="seats-grid"></div>
+                </section>
+            </div>
+
+            <!-- 右侧：我的预约 -->
+            <div class="right-panel">
+                <section class="bookings-section">
+                    <h2>我的预约</h2>
+                    <div id="myBookings" class="bookings-list"></div>
+                </section>
+
+                <section class="stats-section">
+                    <h2>今日统计</h2>
+                    <div id="todayStats" class="stats-grid"></div>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            © 林氏图书馆管管理系统 | 联系方式：shuaibilinyu798@gmail.com
+        </footer>
+    </div>
+
+    <!-- 预约确认弹窗 -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>确认预约</h2>
+            <div id="bookingDetails"></div>
+            <div class="modal-actions">
+                <button class="btn btn-success" onclick="confirmBooking()">确认预约</button>
+                <button class="btn btn-secondary" onclick="closeBookingModal()">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

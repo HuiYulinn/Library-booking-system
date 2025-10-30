@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #4a90e2;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #357abd;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.user-info a {
+    text-decoration: none;
+}
+
+.select-user {
+    padding: 8px 12px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.select-user option {
+    color: #333;
+}
+
+.current-user {
+    background: #357abd;
+    padding: 8px 15px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+.left-panel, .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section {
+    background: #fafafa;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #4a90e2;
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #357abd;
+}
+
+.btn-success {
+    background: #5cb85c;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #4cae4c;
+}
+
+.btn-danger {
+    background: #d9534f;
+    color: white;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.btn-danger:hover {
+    background: #c9302c;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.seats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.seat-card {
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.seat-card:hover {
+    border-color: #4a90e2;
+    background: #f0f8ff;
+}
+
+.seat-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 8px;
+}
+
+.seat-info {
+    color: #666;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.seat-features {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.feature-badge {
+    background: #e8f4f8;
+    color: #333;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.bookings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.booking-card {
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    border-left: 3px solid #4a90e2;
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.booking-seat {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+.booking-status {
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.status-confirmed {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+.status-pending {
+    background: #fcf8e3;
+    color: #8a6d3b;
+}
+
+.status-cancelled {
+    background: #f2dede;
+    color: #a94442;
+}
+
+.status-completed {
+    background: #d9edf7;
+    color: #31708f;
+}
+
+.booking-info {
+    color: #666;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.booking-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stat-card {
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 13px;
+}
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+#bookingDetails {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.detail-item {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.detail-value {
+    color: #4a90e2;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-actions .btn {
+    flex: 1;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+#seatCount {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+footer a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+    
+    .seats-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+}
+
